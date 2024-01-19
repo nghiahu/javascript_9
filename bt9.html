@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumZero(arr){
+            let sum = 0;
+            let list_sum=[];
+            for(let i = 0; i < arr.length; i++){
+                for(let j = 0; j < arr.length;j++){
+                    sum = arr[i] + arr[j];
+                    if(sum === 0){
+                    list_sum.push(arr[i]);
+                    list_sum.push(arr[j]);
+                    return list_sum;
+                }
+                }
+            }
+           
+        }
+        let num = sumZero([-1, 0, 1, 2]);
+        console.log(num);
+        let num2 = sumZero([1, 2, 3]);
+        console.log(num2);
+
+    </script>
+</body>
+</html>

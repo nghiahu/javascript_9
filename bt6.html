@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        function fakeFind ( arr ,fn){
+            for(let i = 0;i < arr.length;i++){
+            let test = fn(arr[i]);
+            if(test === true){
+                return arr[i];
+            }
+            }
+        }
+        let nums = [1,2,3,4,5,6,7,8,9]
+        ;
+        let rest1 = fakeFind(nums,function (e){
+            return e === 1;
+        });
+        console.log(rest1);
+        let rest2 = fakeFind(nums,function (e){
+            return e === 11;
+        });
+        console.log(rest2);
+    </script>
+</body>
+</html>

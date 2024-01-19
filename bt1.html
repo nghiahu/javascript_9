@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findLongestWorldLength(str) {
+        let words = str.split(" ");
+        let max = 0;
+        let result = "";
+        for (let i = 0; i<words.length;i++) {
+            if (words[i].length > max) {
+            max = words[i].length;
+            result = words[i];
+            }
+        }
+        return result + " (" + max + ")";
+        }
+        let str = "The quick brown fox jumped over the lazy dog";
+        let result = findLongestWorldLength(str);
+        console.log(result);
+    </script>
+</body>
+</html>

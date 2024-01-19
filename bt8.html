@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fakeReduce(array, callback, initialValue) {
+        let accumulator = initialValue || array[0];
+        let startIndex = initialValue ? 0 : 1;
+        for (let i = startIndex; i < array.length; i++) {
+            accumulator = callback(accumulator, array[i], i, array);
+        }
+        return accumulator;
+        }
+        let numbers = [1, 2, 3, 4, 5];
+        let sum = fakeReduce(numbers, function (total, value) {
+        return total + value;
+        });
+        console.log(sum);
+    </script>
+</body>
+</html>

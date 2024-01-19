@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fakeFilter(array, callback) {
+        let result = [];
+        for (let i = 0; i < array.length; i++) {
+            let condition = callback(array[i], i);
+            if (condition) {
+            result.push(array[i]);
+            }
+        }
+        return result;
+        }
+        let result1 = fakeFilter([1,2,3,4], function(e) {
+        if(e % 2 === 0) {
+        return true;
+        } else {
+            return false;
+        }
+        });
+        console.log(result1);
+        let result2 = fakeFilter([1,2,3,4], function(e) {
+            if(e % 2 !== 0) {
+            return true;
+        } else {
+            return false;
+        }
+        });
+        console.log(result2);
+    </script>
+</body>
+</html>
